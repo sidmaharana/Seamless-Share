@@ -3,187 +3,166 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Blog</title>
+    <title>Engineering Blog | SeamlessShare</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="stylesheet" href="styles.css" />
     <style>
-      .sect {
-        width: 90%;
-        max-width: 800px;
-        display: flex;
-        flex-direction: column;
-        gap: 40px;
-        margin-top: 140px;
-        margin-bottom: 140px;
+      body {
+        background: #121212;
+        color: #e0e0e0;
+        font-family: 'IBM Plex Mono', 'Courier New', monospace;
       }
-
-      section,
-      header {
-        background-color: #222;
-        padding: 30px;
-        border-radius: 10px;
-        box-shadow: 0 0 8px rgb(52, 160, 210);
-        text-align: center;
-        transition: transform 0.3s ease-in-out;
+      
+      .panel {
+        background: #1e1e1e;
+        border: 1px solid #333;
+        border-radius: 4px;
+        box-shadow: 0 2px 4px rgba(0,0,0,0.3);
       }
-
-      section:hover,
-      header:hover {
-        transform: scale(1.02);
+      
+      .header-accent {
+        border-bottom: 2px solid #3a7bd5;
       }
-
-      .block1 h1 {
-        font-size: 40px;
-        color: #00d4ff;
-        margin-bottom: 10px;
-        text-shadow: 0 0 10px #36a2cc;
+      
+      .status-indicator {
+        height: 10px;
+        width: 10px;
+        border-radius: 50%;
+        display: inline-block;
+        margin-right: 6px;
       }
-
-      .block1 p {
-        font-size: 1.2rem;
-        color: #4fdcdc;
-        font-family: "Courier New", Courier, monospace;
+      
+      .status-active {
+        background: #48bb78;
+        box-shadow: 0 0 8px #48bb78;
+      }
+      
+      .blog-card {
+        background: #2d3748;
+        border-left: 3px solid #3a7bd5;
+        padding: 20px;
         margin-bottom: 20px;
+        transition: all 0.2s;
       }
-
-      .btn {
-        background-color: #36a2cc;
+      
+      .blog-card:hover {
+        background: #4a5568;
+        transform: translateY(-2px);
+      }
+      
+      .blog-title {
+        color: #3a7bd5;
+        font-weight: 500;
+        margin-bottom: 12px;
+        font-size: 18px;
+      }
+      
+      .blog-date {
+        color: #718096;
+        font-size: 12px;
+        margin-bottom: 8px;
+      }
+      
+      .blog-excerpt {
+        color: #a0aec0;
+        font-size: 14px;
+        line-height: 1.6;
+      }
+      
+      .btn-primary {
+        background: #3a7bd5;
         color: white;
-        padding: 10px 20px;
-        text-decoration: none;
-        font-size: 1rem;
-        border-radius: 5px;
-        transition: background-color 0.3s;
+        padding: 8px 16px;
+        border-radius: 4px;
+        font-size: 14px;
+        transition: all 0.2s;
       }
-
-      .btn:hover {
-        background-color: #1e7ea3;
-      }
-
-      .features ul,
-      .how-it-works ol {
-        text-align: left;
-        color: #8abbeb;
-        font-family: "Courier New", Courier, monospace;
-        font-size: 1.1rem;
-        padding-left: 1rem;
-      }
-
-      .features li,
-      .how-it-works li {
-        margin: 12px 0;
-      }
-
-      .features b,
-      .how-it-works b {
-        color: #00d4ff;
-      }
-
-      .contact a {
-        color: #36a2cc;
-        font-weight: bold;
-        text-decoration: none;
-      }
-
-      .contact a:hover {
-        text-decoration: underline;
-      }
-
-      footer p {
-        color: #00d4ff;
-        margin-top: 30px;
-        text-align: center;
+      
+      .btn-primary:hover {
+        background: #2c5fb3;
       }
     </style>
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
   </head>
-  <body class="bg-zinc-950 text-white flex flex-col items-center justify-center min-h-screen p-6">
-    <div class="nav-container mb-10">
-      <nav class="nav3 bg-zinc-900">
-        <ul>
-          <li
-            class="li text-2xl not-italic"
-            style="font-family: Georgia, 'Times New Roman', Times, serif; font-weight: 1000;"
-          >
-            SeamlessShare
-          </li>
-          <li><a href="index.html">Home</a></li>
-          <li class="dropdown">
-            <a href="#">Resources</a>
-            <div
-              class="dropdown-content text-center w-48 shadow-lg rounded-full group-hover:block absolute left-1/2 transform -translate-x-1/2 z-50"
-            >
-              <a href="Blog.html">Blog</a>
-              <a href="About_us.html">About Us</a>
-            </div>
-          </li>
-          <li><a href="Help.html">Help</a></li>
-        </ul>
-      </nav>
-    </div>
-
-    <div class="sect">
-      <!-- Hero Section -->
-      <header class="block1">
-        <h1>🚀 Fast & Secure File Transfer</h1>
-        <p>Transfer files with ease using our secure and simple platform.</p>
-        <a href="index.html" class="btn">Get Started</a>
+  <body class="min-h-screen">
+    <div class="container mx-auto px-4 py-8 max-w-4xl">
+      <!-- Header -->
+      <header class="mb-8 panel p-4">
+        <div class="flex justify-between items-center">
+          <div class="flex items-center">
+            <div class="status-indicator status-active"></div>
+            <h1 class="text-2xl font-mono font-medium">SeamlessShare</h1>
+            <span class="ml-2 text-sm text-gray-400">v2.4.1</span>
+          </div>
+          <nav>
+            <ul class="flex space-x-6 text-sm">
+              <li><a href="index.html" class="hover:text-blue-400">Home</a></li>
+              <li class="relative group">
+                <a href="#" class="hover:text-blue-400">Resources</a>
+                <div class="absolute hidden group-hover:block bg-gray-800 p-2 rounded shadow-lg mt-1 w-40">
+                  <a href="Blog.html" class="block px-3 py-1 hover:bg-gray-700 rounded text-sm">Blog</a>
+                  <a href="About_us.html" class="block px-3 py-1 hover:bg-gray-700 rounded text-sm">About</a>
+                </div>
+              </li>
+              <li><a href="Help.html" class="hover:text-blue-400">Help</a></li>
+            </ul>
+          </nav>
+        </div>
       </header>
 
-      <!-- Features -->
-      <section id="features" class="features">
-        <h2 class="text-2xl font-semibold text-cyan-400 mb-4">Why Use Our File Transfer App?</h2>
-        <ul>
-          <li>
-            <b>🔒 Secure and Private Transfers</b>
-            <p>Your files are encrypted, ensuring only the intended recipient can access them.</p>
-          </li>
-          <li>
-            <b>⚡ Fast Uploads and Downloads</b>
-            <p>High-speed servers enable seamless file transfers, even for large files.</p>
-          </li>
-          <li>
-            <b>📂 No Signup Required</b>
-            <p>Just upload, get a code, and share. No accounts. No hassle.</p>
-          </li>
-          <li>
-            <b>🔗 Simple 6-digit Code Sharing</b>
-            <p>Share a unique 6-digit code to access your file — clean and secure.</p>
-          </li>
-        </ul>
-      </section>
+      <!-- Main Content -->
+      <main>
+        <section class="panel p-6 mb-6">
+          <div class="header-accent pb-2 mb-4">
+            <h2 class="text-lg font-mono font-medium">Engineering Blog</h2>
+          </div>
+          
+          <div class="blog-card">
+            <div class="blog-date">2025-03-15 | SYSTEM ARCHITECTURE</div>
+            <h3 class="blog-title">Building a Zero-Knowledge File Transfer Protocol</h3>
+            <p class="blog-excerpt">
+              We implemented end-to-end encryption without server-side decryption capability. 
+              This technical deep dive explains our AES-256 implementation and key exchange protocol.
+            </p>
+            <a href="#" class="btn-primary inline-block mt-3">READ MORE</a>
+          </div>
+          
+          <div class="blog-card">
+            <div class="blog-date">2025-02-28 | PERFORMANCE</div>
+            <h3 class="blog-title">Optimizing Global File Transfer Latency</h3>
+            <p class="blog-excerpt">
+              How we reduced median transfer times by 62% through edge caching and TCP optimization. 
+              Includes benchmarks across different regions and file sizes.
+            </p>
+            <a href="#" class="btn-primary inline-block mt-3">READ MORE</a>
+          </div>
+          
+          <div class="blog-card">
+            <div class="blog-date">2025-01-10 | SECURITY</div>
+            <h3 class="blog-title">Implementing Auto-Purge for Temporary Storage</h3>
+            <p class="blog-excerpt">
+              Our cryptographic proof-of-deletion system ensures files are completely removed from 
+              storage nodes after 24 hours. Technical details on our secure erase implementation.
+            </p>
+            <a href="#" class="btn-primary inline-block mt-3">READ MORE</a>
+          </div>
+          
+          <div class="blog-card">
+            <div class="blog-date">2024-12-05 | FRONTEND</div>
+            <h3 class="blog-title">Minimalist UI for Maximum Security</h3>
+            <p class="blog-excerpt">
+              Why we chose a terminal-inspired interface design that reduces attack surface while 
+              maintaining usability. Analysis of user behavior patterns.
+            </p>
+            <a href="#" class="btn-primary inline-block mt-3">READ MORE</a>
+          </div>
+        </section>
+      </main>
 
-      <!-- How it Works -->
-      <section id="how-it-works" class="how-it-works">
-        <h2 class="text-2xl font-semibold text-cyan-400 mb-4">How It Works</h2>
-        <ol>
-          <li>
-            <b>📤 Upload your file and get a unique 6-digit code</b>
-            <p>Drag, drop, and get a one-time code instantly.</p>
-          </li>
-          <li>
-            <b>📩 Share the code with your recipient</b>
-            <p>Send it via text, email, or even whisper it — it’s that simple.</p>
-          </li>
-          <li>
-            <b>⬇️ Download the file using the code</b>
-            <p>The recipient enters the code and grabs the file — fast and safe.</p>
-          </li>
-        </ol>
-      </section>
-
-      <!-- Contact -->
-      <section id="contact" class="contact">
-        <h2 class="text-2xl font-semibold text-cyan-400 mb-4">Get in Touch</h2>
-        <p>
-          Questions or feedback? Drop us a line at
-          <a href="mailto:uplords@filetransfer.com">uplords@filetransfer.com</a>
-        </p>
-      </section>
+      <!-- Footer -->
+      <footer class="mt-8 text-center text-xs text-gray-500 font-mono">
+        <p>SeamlessShare Engine v2.4.1 | Secure File Transfer Protocol</p>
+        <p class="mt-1">© 2025 Network Operations</p>
+      </footer>
     </div>
-
-    <!-- Footer -->
-    <footer>
-      <p>© 2025 File Transfer System. All rights reserved.</p>
-    </footer>
   </body>
 </html>
