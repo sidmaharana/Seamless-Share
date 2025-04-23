@@ -58,5 +58,6 @@ A lightweight file sharing application that allows users to upload files and sha
 
 
 ## Author
-
-Sidharth
+Parv Sheth
+Sidharth Maharana
+Saee Tarde
